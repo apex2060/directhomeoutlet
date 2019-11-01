@@ -23,7 +23,7 @@ h1{
 }
 
 .cta-card{
-    position: fixed;
+    position: absolute;
     top: 150px;
     right: 50px;
     background: #FF0;
