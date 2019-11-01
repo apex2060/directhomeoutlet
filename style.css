@@ -21,18 +21,3 @@ h1, a{
 h1{
     font-size: 122px;
 }
-
-.cta-card{
-    position: absolute;
-    top: 150px;
-    right: 50px;
-    background: #FF0;
-    color: #003;
-    text-align: left;
-    list-style: none;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 3em;
-    padding: 16px;
-    border-radius: 5px;
-}
