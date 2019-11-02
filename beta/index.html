@@ -271,12 +271,13 @@
 					'The best parts and warranties',
 					'Made in the USA'
 				]
+				let ctatext = document.querySelector('.cta-text');
 				let promptIdx = 0;
+				ctatext.innerHTML = prompts[promptIdx++];
 				setInterval(()=>{
-					let ctatext = document.querySelector('.cta-text');
 					ctatext.innerHTML = prompts[promptIdx++];
-					if(promptIdx > prompts.length)
-						promptIdx = 0;
+					if(promptIdx >= prompts.length)
+						promptIdx = 0; 
 				}, 2000)
 			</script>
 	</body>
