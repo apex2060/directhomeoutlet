@@ -30,7 +30,7 @@
 		<style>
 			.cta-card{
 				position: absolute;
-				top: 150px;
+				bottom: 200px;
 				right: 50px;
 				background: #FF0;
 				color: #003;
@@ -41,6 +41,9 @@
 				line-height: 3em;
 				padding: 16px;
 				border-radius: 5px;
+			}
+			.cta-text{
+				
 			}
 		</style>
 	</head>
@@ -64,12 +67,10 @@
 			<section id="banner">
 				<div>
 					<h1>Direct Home Outlet</h1>
-					<ul class="cta-card">
-						<li>Factory Direct Pricing</li>
-						<li>Certified and Trained installs with years of experience</li>
-						<li>The best parts and warranties</li>
-						<li>Made in the USA</li>
-					</ul>
+					<div class="cta-card">
+						<div class="cta-text"></div>
+						<div class="cta-button"></div>
+					</div>
 					<!-- <p>Re-Imagine your dream home.</p> -->
 				</div>
 			</section>
@@ -263,5 +264,20 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				let prompts = [
+					'Factory Direct Pricing',
+					'Certified and Trained installs with years of experience',
+					'The best parts and warranties',
+					'Made in the USA'
+				]
+				let promptIdx = 0;
+				setInterval(()=>{
+					let ctatext = document.querySelector('.cta-text');
+					ctatext.innerHTML = prompts[promptIdx++];
+					if(promptIdx > prompts.length)
+						promptIdx = 0;
+				}, 2000)
+			</script>
 	</body>
 </html>
