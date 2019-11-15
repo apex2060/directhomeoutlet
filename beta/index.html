@@ -285,6 +285,23 @@
 					if(promptIdx >= prompts.length)
 						promptIdx = 0; 
 				}, 2000)
+
+				$('#form').on('submit', ()=>{
+					let form = $( this );
+					let data = {};
+					// Make sure you use the 'name' field on the inputs you want to grab. 
+					form.find('[name]').each((i,v)=>{
+						let input 	= $( this ),
+							name 	= input.attr('name'),
+							value	= input.val();
+						data[name] = value;
+					});
+					
+					$.post('https://a.alphabetize.us/project/client_dho/cloud/email', data, (response)=>{
+						console.log('post form, ', response)
+						alert('Your request has been sent!')
+					})
+				})
 			</script>
 	</body>
 </html>
