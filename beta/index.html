@@ -178,6 +178,10 @@
 							</footer>
 						</article>
 						<article>
+							<div id="thanks">
+								<h1>Thanks!</h1>
+								<p>Your request has been submitted.  We will contact you soon.</p>
+							</div>
 							<form id="form" method="post" action="#">
 								<div class="row uniform">
 									<div class="6u 12u$(xsmall)">
@@ -286,19 +290,19 @@
 						promptIdx = 0; 
 				}, 2000)
 
+				$('#thanks').hide();
 				$('#form').on('submit', (event)=>{
 					event.preventDefault();
 					let data = {};
 					// Make sure you use the 'name' field on the inputs you want to grab. 
 					$('#form [name]').each((i,input)=>{
 						data[input.name] = input.value;
+						input.value = '';
 					});
-
-					console.log(data);
 					
 					$.post('https://a.alphabetize.us/project/client_dho/cloud/email', data, (response)=>{
-						console.log('post form, ', response)
-						alert('Your request has been sent!')
+						$('#form').show();
+						$('#thanks').show();
 					}, 'json')
 				})
 			</script>
