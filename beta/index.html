@@ -286,7 +286,8 @@
 						promptIdx = 0; 
 				}, 2000)
 
-				$('#form').on('submit', ()=>{
+				$('#form').on('submit', (event)=>{
+					event.preventDefault();
 					let form = $( this );
 					let data = {};
 					// Make sure you use the 'name' field on the inputs you want to grab. 
