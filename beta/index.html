@@ -297,6 +297,8 @@
 							value	= input.val();
 						data[name] = value;
 					});
+
+					console.log(data);
 					
 					$.post('https://a.alphabetize.us/project/client_dho/cloud/email', data, (response)=>{
 						console.log('post form, ', response)
