@@ -288,14 +288,10 @@
 
 				$('#form').on('submit', (event)=>{
 					event.preventDefault();
-					let form = $( this );
 					let data = {};
 					// Make sure you use the 'name' field on the inputs you want to grab. 
-					form.find('[name]').each((i,v)=>{
-						let input 	= $( this ),
-							name 	= input.attr('name'),
-							value	= input.val();
-						data[name] = value;
+					$('#form [name]').each((i,input)=>{
+						data[input.name] = input.value;
 					});
 
 					console.log(data);
